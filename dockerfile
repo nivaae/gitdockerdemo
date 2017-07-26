@@ -2,5 +2,5 @@
 FROM httpd:latest
 MAINTAINER nivi11<nivaae@gmail.com>
 EXPOSE 8081 80
-VOLUME ["/build/Demo"]
+VOLUME ["/var/www/html/Demo"]
 CMD Echo This is a test to verify dockerjenkins skills
