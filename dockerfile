@@ -1,6 +1,9 @@
 # gitdockerdemo in jenkins
-FROM ubuntu:latest
+FROM ubuntu:artful 
 MAINTAINER nivi11<nivaae@gmail.com>
-RUN apt-get update && apt-get install -y --force-yes apache2
-EXPOSE 80 8082
-VOLUME ["/gitdockerdemo/test.html"]
+ENV HTTPD = 2.4
+RUN apt-get update -y
+RUN apt-get install apache2 -y 
+CMD ["apachectl", "-D", "FOREGROUND"]
+EXPOSE 80 8011
+VOLUME ["/var/www/html/gitdockerdemo"]
